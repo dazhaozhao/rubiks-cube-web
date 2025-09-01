@@ -7,11 +7,7 @@
 
 - 演示视频：
 
-  <video controls width="640" preload="metadata">
-    <source src="./cube.mp4" type="video/mp4" />
-    <source src="./cube.mov" type="video/quicktime" />
-    您的浏览器不支持内嵌视频，请点击下载查看：<a href="./cube.mp4">cube.mp4</a>
-  </video>
+  ![魔方GIF](./cube.gif)
 
   直接链接： [cube.mp4](./cube.mp4)
 
@@ -117,17 +113,5 @@ pnpm preview
 ├── package.json                   # 脚本与依赖
 └── pnpm-lock.yaml
 ```
-
-## 截图与演示
-- 截图：
-
-  ![魔方截图](./cube.jpg)
-
-- 演示视频（.mov）：
-
-  <video src="./cube.mov" controls width="640" preload="metadata"></video>
-
-  如果无法内嵌播放，可直接下载或在仓库页面中查看： [下载/查看 cube.mov](./cube.mov)
-
 ## 许可
 本项目使用 Apache License 2.0。详见根目录的 LICENSE 文件。
