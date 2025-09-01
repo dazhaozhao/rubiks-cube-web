@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 
 export default function UI({ cubeRef, onAfterResetOrScramble }) {
   const call = (fn, ...args) => () => cubeRef?.current?.[fn]?.(...args);
-  const rotate = (m) => () => cubeRef?.current?.rotate?.(m);
+  const rotate = (m) => () => {
+    cubeRef?.current?.rotate?.(m);
+    // 仅统计用户手动点击的面旋转
+    window.dispatchEvent(new Event('steps:user-rotate'));
+  };
   const afterReset = () => {
     onAfterResetOrScramble && onAfterResetOrScramble();
   };
@@ -39,13 +43,20 @@ export default function UI({ cubeRef, onAfterResetOrScramble }) {
           whileTap={{ scale: 0.95 }}
           onClick={() => {
             cubeRef?.current?.scramble?.(25);
+            // 打乱后清零
+            window.dispatchEvent(new Event('steps:clear'));
             afterReset();
           }}
           className="px-5 py-2 rounded-2xl bg-gradient-to-r from-fuchsia-600 via-purple-600 to-cyan-500 text-white font-bold shadow-[0_8px_30px_rgb(79,70,229,0.4)] hover:brightness-110"
         >
           打乱
         </motion.button>
-        <Button onClick={() => { cubeRef?.current?.reset?.(); afterReset(); }}>重置</Button>
+        <Button onClick={() => { 
+          cubeRef?.current?.reset?.(); 
+          // 重置后清零
+          window.dispatchEvent(new Event('steps:clear'));
+          afterReset(); 
+        }}>重置</Button>
         <Button onClick={call("undo")}>撤销</Button>
         <Button onClick={call("redo")}>重做</Button>
       </div>
