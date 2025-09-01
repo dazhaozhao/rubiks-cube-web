@@ -103,5 +103,16 @@ pnpm preview
 └── pnpm-lock.yaml
 ```
 
+## 截图与演示
+- 截图：
+
+  ![魔方截图](./cube.jpg)
+
+- 演示视频（.mov）：
+
+  <video src="./cube.mov" controls width="640" preload="metadata"></video>
+
+  如果无法内嵌播放，可直接下载或在仓库页面中查看： [下载/查看 cube.mov](./cube.mov)
+
 ## 许可
 本项目使用 Apache License 2.0。详见根目录的 LICENSE 文件。
