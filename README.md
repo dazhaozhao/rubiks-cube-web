@@ -1,5 +1,20 @@
 # Rubik's Cube Web（React + Three.js）
 
+## 截图与演示
+- 截图：
+
+  ![魔方截图](./cube.jpg)
+
+- 演示视频：
+
+  <video controls width="640" preload="metadata">
+    <source src="./cube.mp4" type="video/mp4" />
+    <source src="./cube.mov" type="video/quicktime" />
+    您的浏览器不支持内嵌视频，请点击下载查看：<a href="./cube.mp4">cube.mp4</a>
+  </video>
+
+  直接链接： [cube.mp4](./cube.mp4)
+
 一个基于 React Three Fiber 的 3D 魔方可视化与交互项目。支持面旋转、撤销/重做、打乱、按步骤动画复原，界面为中文，开箱即用地部署到 GitHub Pages。
 
 ## 功能特性
