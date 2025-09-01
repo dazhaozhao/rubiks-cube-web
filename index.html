@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rubik's Cube</title>
+    <script>
+      // GitHub Pages SPA 404 回退方案：如果访问子路径刷新导致 404，跳回根路径
+      // 注意：生产上更推荐生成独立 404.html，这里用轻量处理保障基本可用
+      (function(){
+        var expectedBase = (function(){
+          var repo = (window.GITHUB_REPOSITORY || '').split('/')[1];
+          return repo ? '/' + repo + '/' : '/';
+        })();
+        // 如果当前路径不是以 base 开头，尝试跳转回 base
+        try {
+          var base = document.querySelector('base')?.getAttribute('href') || expectedBase;
+          if (base && location.pathname.indexOf(base) !== 0) {
+            location.replace(base);
+          }
+        } catch(e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
